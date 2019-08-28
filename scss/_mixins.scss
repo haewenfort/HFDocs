@@ -1,0 +1,19 @@
+$filepath: '../images/';
+
+@mixin borderRadius($radius){
+    border-radius: $radius;
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+}
+
+@mixin makeBorder($size, $style, $color){
+    border: $size $style $color;
+}
+
+
+@mixin sectionTitleIcon($dimension, $filename){
+    height: $dimension;
+    width: $dimension;
+    background: url($filepath+$filename) center no-repeat $blue;
+    background-size: 100%;
+}

@@ -13,55 +13,39 @@
         <img src="dist/images/logo.png" alt="Holiday Factory" class="branding__image"/>
     </h1>
     <div class="pageheading color--white">
-        <h2 class="pageheading__title title--uppercase">Tax Invoice - 
-            <span>30181902</span>
-        </h2>
-        <p class="pageheading__date">2/12/2019</p>
-        <p class="pageheading__details title--uppercase">2 nights - 3 star Georgia, Tbilisi Package with Fly Dubai</p>
+        <h2 class="pageheading__title title--uppercase">Travel Voucher</h2>
+        <p class="pageheading__details title--uppercase">Your Holiday Package</p>
     </div>
 </header>
 <main>
     <section class="customer">
-        <div class="customer__wrapper section--wrapper">
+        <div class="customer__wrapper section--wrapper grid--3col grid--layout">
             <p class="customer__firstname">
-                <strong>First Name:</strong>
-                Mohammed
-            </p>
-            <p class="customer__lastname">
-                <strong>Last Name:</strong>
-                Abdullarahman
-            </p>
-            <p class="customer__vouchernumber">
-                <strong>Number of Voucher/s:</strong>
-                1
-            </p>
-
-            <p class="customer__bookingnumber">
-                <strong>Booking Number:</strong>
+                <strong>Booking Number:</strong><br>
                 30181902
             </p>
-            <p class="customer__mobile">
-                <strong>Mobile:</strong>
-                +971 50 251 9910
+            <p class="customer__lastname">
+                <strong>Customer Name:</strong><br>
+                Mohammed Abdullarahman
             </p>
-            <p class="customer__email">
-                <strong>Email:</strong>
-                mo.abdullarahman@gmail.com
+            <p class="customer__vouchernumber">
+                <strong>Number of Voucher/s:</strong><br>
+                1
             </p>
         </div>
     </section> 
 
-    <section class="booking">
-        <h2 class="booking__title title--uppercase section--title background--blue color--white">Booking Details</h2>
+    <section class="package">
+        <h2 class="package__title title--uppercase section--title with-icon background--blue color--white">Voucher Details</h2>
         
-        <div class="booking__wrapper section--wrapper">
-            <p class="booking__destination">
-                <strong>Holiday Package:</strong>
+        <div class="package__wrapper section--wrapper">
+            <p class="package__destination">
+                <strong>Voucher to:</strong>
                 Georgia, Tbilisi Holiday Package with Fly Dubai
             </p>
-            <p class="booking__inclusions">
+            <p class="package__inclusions">
                 <strong>Inclusions:</strong>
-                <ul class="booking_inclusions_list">
+                <ul class="package_inclusions_list">
                     <li>Return Flight to Tbilisi with Fly Dubai</li>
                     <li>Airport - Hotel Transfer in Tbilisi</li>
                     <li>2 night(s) stay at the 3 Star Hotel GTM Plaza in Tbilisi with breakfast</li>
@@ -69,69 +53,65 @@
                     <li>Holiday Factory Representatives</li>
                 </ul>
             </p>
+            <p class="package__validity">
+                <strong>Validity:</strong>
+                Voucher is valid for travel from 30-11-2019 to 30-11-2019
+            </p>
         </div>
     </section> 
     
-    <section class="invoice">
-        <h2 class="booking__title title--uppercase section--title background--blue color--white">Invoice</h2>
+    <section class="howtobook">
+        <h2 class="howtobook__title title--uppercase section--title with-icon background--blue color--white">How to book your voucher</h2>
         
-        <div class="invoice__wrapper section--wrapper">
-            <p class="invoice__price">
-                <strong>Price:</strong>
-                All Taxes and Subcharges + Baggage Allowance per person included.
-            </p>
-            <table class="invoice__details table-bordered width--50" cellpadding="0" cellspacing="0">
-                <tr>
-                    <td>Total VAT Zero Rated:</td>
-                    <td>1,022.00 AED</td>
-                </tr>
-                <tr>
-                    <td>Total VAT Rated Services:</td>
-                    <td>7.62 AED</td>
-                </tr>
-                <tr>
-                    <td>Total VAT:</td>
-                    <td>0.38 AED</td>
-                </tr>
-                <tr>
-                    <td>Total Price (incl VAT):</td>
-                    <td>1,030.00 AED</td>
-                </tr>
-                <tr>
-                    <td>Status:</td>
-                    <td>Paid</td>
-                </tr>
-            </table>
-            <table class="invoice__payment width--50" cellpadding="0" cellspacing="0">
-                <tr>
-                    <td>Payment method:</td>
-                    <td>Credit Card</td>
-                </tr>
-                <tr>
-                    <td>Card/Account:</td>
-                    <td>521532******4207</td>
-                </tr>
-                <tr>
-                    <td>Pay ID:</td>
-                    <td>156103400400053397</td>
-                </tr>
-                <tr>
-                    <td>Payment Date:</td>
-                    <td>20/06/2019 16:33:29</td>
-                </tr>
-                <tr>
-                    <td>Total Charge:</td>
-                    <td>AED 1,030.00</td>
-                </tr>
-            </table>
+        <div class="howtobook__wrapper section--wrapper">
+            <ol>
+                <li>You can decide on your travel dates now or later, within the travel validity.</li>
+                <li>After deciding your travel dates, visit <u>www.holiday-factory.com/book/voucherbookingrequest</u> to request your travel dates and submit the traveler details as per the passport.</li>
+                <li> Your travel document will be sent to your email address within 72 hours after submitting the form.</li>
+            </ol>
         </div>
     </section>
 
-    <div class="notice">
-        <div class="notice__wrapper section--wrapper">
-            <h3 class="notice__heading color--red title--uppercase">Notice:</h3>
-            <p class="notice__details">This invoice has been generated based on the agreed Terms and Conditions which are attached in this email.  Your Travel Documents will be sent to you via email within the next 24 hours.</p>
+    <div class="information">
+        <h2 class="information__title title--uppercase section--title with-icon background--blue color--white">Information</h2>
+
+        <div class="information__wrapper section--wrapper">
+            <ul class="information__inclusion">
+                <li>Single Traveler: 150 AED additional charges for Single Room Occupancy</li>
+                <li>Infant Voucher: 300 AED (0-24 months)</li>
+                <li>Extend your stay - each additional night cost only:
+                    <ul>
+                        <li>100 AED per person in double room occupancy / 200 AED for single room occupancy</li>
+                    </ul>
+                </li>
+                <li>Supplement for high season:
+                    <ul>
+                        <li>15.12.2018 - 06.01.2019 supplement of 800 AED per person</li>
+                        <li>14.03.2019 - 31.03.2019 supplement of 600 AED per person</li>
+                    </ul>
+                </li>
+                <li>Hotel Supplement: 16.07.19 - 31.08.19 will be additional 150 AED per person per night</li>
+            </ul>
         </div>
+        
+        <h3 class="information__subtitle title--uppercase section--title with-icon background--gray">Essential Terms & Conditions</h3>
+        <div class="information__wrapper section--wrapper">
+            <ul class="information__inclusion">
+                <li>UAE public/national holidays are excluded</li>
+                <li>Travel insurance is per Schengen standard and is only applicable and valid for this booking.</li>
+                <li>Voucher can be cancelled within the travel validity with a cancellation fee of 50 AED per voucher. Cancellation will take effect once Holiday Factory L.L.C receives the cancellation request via email. </li>
+                <li>Once your travel date is conﬁrmed, any amendments must be requested latest by 72 hours before travel date and charges will be applied as per the general terms and conditions.</li>
+                <li>General Terms & Conditions apply for all booked passengers. <br>For your referral: <u>www.holiday-factory.com/common/terms-conditions</u></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="thankyou background--blue color--white">
+        <div class="thankyou__wrap">
+            <h2 class="thankyou__title title--uppercase section--title pb-0">Thank you for choosing</h2>
+            <p class="thankyou__details title--uppercase">Holiday Factory – your leading Tour operator in the Middle East</p>
+        </div>
+        <img class="thankyou__logo" src="dist/images/logo.png" />
     </div>
 </main>
 

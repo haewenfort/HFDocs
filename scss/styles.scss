@@ -5,7 +5,16 @@
 
 
 //Constants
+.mb-0 { margin-bottom: 0 !important; }
+.mt-0 { margin-top: 0 !important; }
+.ml-0 { margin-left: 0 !important; }
+.mr-0 { margin-right: 0 !important; }
+.pb-0 { padding-bottom: 0 !important; }
+.pt-0 { padding-top: 0 !important; }
+.pl-0 { padding-left: 0 !important; }
+.pr-0 { padding-right: 0 !important; }
 .background--blue { background-color: $blue; }
+.background--gray { background-color: $gray; }
 .color--red { color: $red; }
 .color--white { color: $white; }
 .color--black { color: $black; }
@@ -16,6 +25,9 @@
 .title--uppercase { text-transform: uppercase; }
 .section--wrapper { padding: 15px 25px; }
 .width--50 {width: 50%; }
+.grid--layout { display: grid; }
+.grid--3col { grid-template-columns: 33.333% 33.333% 33.333%; }
+.grid--2col { grid-template-columns: 50% 50%; }
 .section--title { 
     font-size: 1.5rem;
     line-height: 1.8rem;
@@ -24,6 +36,9 @@
     font-weight: 700;
     letter-spacing: .05rem;
     margin: 0;
+}
+.with-icon {
+    padding-left:  80px;
 }
 
 .wrapper {
@@ -42,12 +57,16 @@
     margin: 0;
 }
 
-p, ul, td {
-    font-size: .85rem;
-    line-height: 1.4rem;
+p, ul, ol, td {
+    font-size: .80rem;
+    line-height: 1.2rem;
 }
-ul li {
-    line-height:  1.5rem;
+ul li, ol li {
+    line-height:  1.2rem;
+    li {
+        font-size: .7rem;
+        line-height: 1rem;
+    }
 }
 
 
@@ -87,59 +106,120 @@ header {
 }
 
 /*Main*/
-.customer__wrapper {
-    display: grid;
-    grid-template-columns: 50% 50%;
-}
-
-.invoice__details {
-    border-bottom: 1px solid $black;
-    margin: 15px 0;
-    td {
-        padding: 2px 15px;
-        border: 1px solid $black;
-        border-bottom: none;
-    }
-    td:nth-child(odd) {
-        font-weight: bold;
-        border-right: none;
-    }
-}
-.invoice__payment {
-    td:nth-child(odd) {
-        font-weight: bold;
-    }
-    td:nth-child(even) {
-        text-align: right;
-    }
-    tr:last-child {
+.invoice{
+    .invoice__details {
+        border-bottom: 1px solid $black;
+        margin: 15px 0;
         td {
-            border-top: 1px solid $black;
+            padding: 2px 15px;
+            border: 1px solid $black;
+            border-bottom: none;
+        }
+        td:nth-child(odd) {
+            font-weight: bold;
+            border-right: none;
+        }
+    }
+    .invoice__payment {
+        td:nth-child(odd) {
             font-weight: bold;
         }
-    } 
+        td:nth-child(even) {
+            text-align: right;
+        }
+        tr:last-child {
+            td {
+                border-top: 1px solid $black;
+                font-weight: bold;
+            }
+        } 
+    }
 }
 
-.notice__heading {
-    border-top: 1px solid $black;
-    font-family: $heading;
-    font-size: 1rem;
-    letter-spacing: .05rem;
-    line-height: normal;
-    padding-top: 15px;
-    margin-bottom: 5px;
+.notice{
+    .notice__heading {
+        border-top: 1px solid $black;
+        font-family: $heading;
+        font-size: 1rem;
+        letter-spacing: .05rem;
+        line-height: normal;
+        padding-top: 15px;
+        margin-bottom: 5px;
+    }
+    .notice__details {
+        font-family: $body;
+        font-size: .75rem;
+        line-height: 1rem;
+        padding-bottom: 15px;
+        border-bottom: 1px solid $black;
+    }
+    .notice__heading,
+    .notice__details {
+        padding-left:25px;
+        padding-right: 25px;
+    }
 }
-.notice__details {
-    font-family: $body;
-    font-size: .75rem;
-    line-height: 1rem;
-    padding-bottom: 15px;
-    border-bottom: 1px solid $black;
+
+.information{
+    .information__subtitle {
+        font-size: 1rem;
+    }   
 }
-.notice__heading,
-.notice__details {
-    padding-left:25px;
-    padding-right: 25px;
+
+.package__title,
+.howtobook__title,
+.information__title {
+    position: relative;
+    &:before{
+        content:"";
+        position: absolute;
+        left: 21px;
+        top:-5px;
+        @include borderRadius(100%);
+        @include makeBorder(4px, solid, $white);
+    }
+}
+.package__title {
+    &:before {
+        @include sectionTitleIcon(40px, 'icovoucherdetails.png');
+    }
+}
+.howtobook__title {
+    &:before {
+        @include sectionTitleIcon(40px, 'icohowtobook.png');
+    }
+}
+.information__title {
+    &:before {
+        @include sectionTitleIcon(40px, 'icoinformation.png');
+    }
+}
+.information__subtitle {
+    position: relative;
+    &:before {
+        content:"";
+        position: absolute;
+        left: 40px;
+        top: 5px;
+        height: 25px;
+        width: 25px;
+        background: url(../images/icoessentia.png) center no-repeat;
+        background-size: 100%;
+    }
+}
+
+.thankyou {
+    display: flex;
+    justify-content: space-between;
+    .thankyou__details {
+        font-size: .75rem;
+        padding: 0 25px;
+    }
+    .thankyou__logo {
+        height:  37px;
+        margin: 10px 25px;
+        width: 150px;
+    }
 }
 
 /*Footer*/

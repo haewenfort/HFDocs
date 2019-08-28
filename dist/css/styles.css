@@ -1,8 +1,35 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:700&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css");
+.mb-0 {
+  margin-bottom: 0 !important; }
+
+.mt-0 {
+  margin-top: 0 !important; }
+
+.ml-0 {
+  margin-left: 0 !important; }
+
+.mr-0 {
+  margin-right: 0 !important; }
+
+.pb-0 {
+  padding-bottom: 0 !important; }
+
+.pt-0 {
+  padding-top: 0 !important; }
+
+.pl-0 {
+  padding-left: 0 !important; }
+
+.pr-0 {
+  padding-right: 0 !important; }
+
 .background--blue {
   background-color: #0051ad; }
+
+.background--gray {
+  background-color: #c9cacb; }
 
 .color--red {
   color: #fc022b; }
@@ -34,6 +61,15 @@
 .width--50 {
   width: 50%; }
 
+.grid--layout {
+  display: grid; }
+
+.grid--3col {
+  grid-template-columns: 33.333% 33.333% 33.333%; }
+
+.grid--2col {
+  grid-template-columns: 50% 50%; }
+
 .section--title {
   font-size: 1.5rem;
   line-height: 1.8rem;
@@ -42,6 +78,9 @@
   font-weight: 700;
   letter-spacing: .05rem;
   margin: 0; }
+
+.with-icon {
+  padding-left: 80px; }
 
 .wrapper {
   font-family: "Open Sans", sans-serif;
@@ -55,12 +94,15 @@
 * {
   margin: 0; }
 
-p, ul, td {
-  font-size: .85rem;
-  line-height: 1.4rem; }
+p, ul, ol, td {
+  font-size: .80rem;
+  line-height: 1.2rem; }
 
-ul li {
-  line-height: 1.5rem; }
+ul li, ol li {
+  line-height: 1.2rem; }
+  ul li li, ol li li {
+    font-size: .7rem;
+    line-height: 1rem; }
 
 /*Header*/
 header {
@@ -88,32 +130,28 @@ header {
     font-size: .9rem; }
 
 /*Main*/
-.customer__wrapper {
-  display: grid;
-  grid-template-columns: 50% 50%; }
-
-.invoice__details {
+.invoice .invoice__details {
   border-bottom: 1px solid #000;
   margin: 15px 0; }
-  .invoice__details td {
+  .invoice .invoice__details td {
     padding: 2px 15px;
     border: 1px solid #000;
     border-bottom: none; }
-  .invoice__details td:nth-child(odd) {
+  .invoice .invoice__details td:nth-child(odd) {
     font-weight: bold;
     border-right: none; }
 
-.invoice__payment td:nth-child(odd) {
+.invoice .invoice__payment td:nth-child(odd) {
   font-weight: bold; }
 
-.invoice__payment td:nth-child(even) {
+.invoice .invoice__payment td:nth-child(even) {
   text-align: right; }
 
-.invoice__payment tr:last-child td {
+.invoice .invoice__payment tr:last-child td {
   border-top: 1px solid #000;
   font-weight: bold; }
 
-.notice__heading {
+.notice .notice__heading {
   border-top: 1px solid #000;
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
@@ -122,17 +160,77 @@ header {
   padding-top: 15px;
   margin-bottom: 5px; }
 
-.notice__details {
+.notice .notice__details {
   font-family: "Open Sans", sans-serif;
   font-size: .75rem;
   line-height: 1rem;
   padding-bottom: 15px;
   border-bottom: 1px solid #000; }
 
-.notice__heading,
-.notice__details {
+.notice .notice__heading,
+.notice .notice__details {
   padding-left: 25px;
   padding-right: 25px; }
+
+.information .information__subtitle {
+  font-size: 1rem; }
+
+.package__title,
+.howtobook__title,
+.information__title {
+  position: relative; }
+  .package__title:before,
+  .howtobook__title:before,
+  .information__title:before {
+    content: "";
+    position: absolute;
+    left: 21px;
+    top: -5px;
+    border-radius: 100%;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border: 4px solid #fff; }
+
+.package__title:before {
+  height: 40px;
+  width: 40px;
+  background: url("../images/icovoucherdetails.png") center no-repeat #0051ad;
+  background-size: 100%; }
+
+.howtobook__title:before {
+  height: 40px;
+  width: 40px;
+  background: url("../images/icohowtobook.png") center no-repeat #0051ad;
+  background-size: 100%; }
+
+.information__title:before {
+  height: 40px;
+  width: 40px;
+  background: url("../images/icoinformation.png") center no-repeat #0051ad;
+  background-size: 100%; }
+
+.information__subtitle {
+  position: relative; }
+  .information__subtitle:before {
+    content: "";
+    position: absolute;
+    left: 40px;
+    top: 5px;
+    height: 25px;
+    width: 25px;
+    background: url(../images/icoessentia.png) center no-repeat;
+    background-size: 100%; }
+
+.thankyou {
+  display: flex;
+  justify-content: space-between; }
+  .thankyou .thankyou__details {
+    font-size: .75rem;
+    padding: 0 25px; }
+  .thankyou .thankyou__logo {
+    height: 37px;
+    margin: 10px 25px;
+    width: 150px; }
 
 /*Footer*/
 .contact__address {
