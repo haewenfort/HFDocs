@@ -1,6 +1,14 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:700&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css");
+.linebreak {
+  margin: 10px 0;
+  border: none;
+  border-top: 1px solid #c9cacb; }
+
+.m0 {
+  margin: 0 !important; }
+
 .mb-0 {
   margin-bottom: 0 !important; }
 
@@ -12,6 +20,9 @@
 
 .mr-0 {
   margin-right: 0 !important; }
+
+.p0 {
+  padding: 0 !important; }
 
 .pb-0 {
   padding-bottom: 0 !important; }
@@ -31,6 +42,9 @@
 .background--gray {
   background-color: #c9cacb; }
 
+.background--lighterGray {
+  background-color: #eae7e7; }
+
 .color--red {
   color: #fc022b; }
 
@@ -39,6 +53,9 @@
 
 .color--black {
   color: #000; }
+
+.color--blue {
+  color: #0051ad; }
 
 .color--lightgray {
   color: #868686; }
@@ -52,7 +69,7 @@
 .align--center {
   text-align: center; }
 
-.title--uppercase {
+.text--uppercase {
   text-transform: uppercase; }
 
 .section--wrapper {
@@ -70,8 +87,9 @@
 .grid--2col {
   grid-template-columns: 50% 50%; }
 
-.section--title {
-  font-size: 1.5rem;
+.section--title,
+.enlarge--text {
+  font-size: 1.3rem;
   line-height: 1.8rem;
   padding: 5px 25px;
   font-family: "Roboto", sans-serif;
@@ -79,8 +97,19 @@
   letter-spacing: .05rem;
   margin: 0; }
 
+.enlarge--abit {
+  font-size: 1rem; }
+
+.enlarge--abitless {
+  font-size: .85rem; }
+
 .with-icon {
   padding-left: 80px; }
+
+.icon--size {
+  position: relative;
+  top: 3px;
+  width: 15px; }
 
 .wrapper {
   font-family: "Open Sans", sans-serif;
@@ -90,6 +119,15 @@
   font-size: 62.5%;
   line-height: 62.5%;
   letter-spacing: 62.5%; }
+
+.round--corner {
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px; }
+
+.highlighted--box {
+  padding: 15px 25px;
+  margin-bottom: 10px; }
 
 * {
   margin: 0; }
@@ -125,9 +163,11 @@ header {
     line-height: normal;
     letter-spacing: .05rem; }
   header .pageheading .pageheading__date {
-    font-size: .80rem; }
+    font-size: .8rem; }
   header .pageheading .pageheading__details {
     font-size: .9rem; }
+  header .pageheading .pageheading__note {
+    font-size: .75rem; }
 
 /*Main*/
 .invoice .invoice__details {
@@ -172,16 +212,27 @@ header {
   padding-left: 25px;
   padding-right: 25px; }
 
-.information .information__subtitle {
+.information .information__subtitle,
+.information .insurance__subtitle,
+.insurance .information__subtitle,
+.insurance .insurance__subtitle {
   font-size: 1rem; }
 
 .package__title,
 .howtobook__title,
-.information__title {
+.information__title,
+.flight__title,
+.hotel__title,
+.airport__title,
+.insurance__title {
   position: relative; }
   .package__title:before,
   .howtobook__title:before,
-  .information__title:before {
+  .information__title:before,
+  .flight__title:before,
+  .hotel__title:before,
+  .airport__title:before,
+  .insurance__title:before {
     content: "";
     position: absolute;
     left: 21px;
@@ -209,9 +260,35 @@ header {
   background: url("../images/icoinformation.png") center no-repeat #0051ad;
   background-size: 100%; }
 
-.information__subtitle {
+.flight__title:before {
+  height: 40px;
+  width: 40px;
+  background: url("../images/icoflight.png") center no-repeat #0051ad;
+  background-size: 100%; }
+
+.hotel__title:before {
+  height: 40px;
+  width: 40px;
+  background: url("../images/icohotel.png") center no-repeat #0051ad;
+  background-size: 100%; }
+
+.airport__title:before {
+  height: 40px;
+  width: 40px;
+  background: url("../images/icoairport.png") center no-repeat #0051ad;
+  background-size: 100%; }
+
+.insurance .insurance__title:before {
+  height: 40px;
+  width: 40px;
+  background: url("../images/icoinsurance.png") center no-repeat #0051ad;
+  background-size: 100%; }
+
+.insurance .information__subtitle,
+.insurance .insurance__subtitle {
   position: relative; }
-  .information__subtitle:before {
+  .insurance .information__subtitle:before,
+  .insurance .insurance__subtitle:before {
     content: "";
     position: absolute;
     left: 40px;
@@ -220,6 +297,9 @@ header {
     width: 25px;
     background: url(../images/icoessentia.png) center no-repeat;
     background-size: 100%; }
+
+.insurance .insurance__inclusion {
+  margin-bottom: 10px; }
 
 .thankyou {
   display: flex;
@@ -231,6 +311,47 @@ header {
     height: 37px;
     margin: 10px 25px;
     width: 150px; }
+
+.airport .airport__transfers {
+  background: url(../images/icoarrows.jpg) 43% top no-repeat;
+  margin-bottom: 10px;
+  background-size: 50px; }
+  .airport .airport__transfers .airport__name {
+    font-size: .75rem;
+    line-height: 1rem; }
+
+.hotel .hotel__details {
+  position: relative; }
+  .hotel .hotel__details .hotel__dates {
+    width: 150px;
+    text-align: left; }
+  .hotel .hotel__details .hotel__name {
+    font-family: "Roboto", sans-serif;
+    color: #000;
+    font-size: 1.3rem; }
+  .hotel .hotel__details .hotel__rating {
+    width: 65px; }
+  .hotel .hotel__details .hotel__booking {
+    position: absolute;
+    top: 15px;
+    right: 25px; }
+  .hotel .hotel__details .hotel__indetail {
+    padding: 10px 0 0;
+    display: flex;
+    justify-content: space-between; }
+
+.flight .flight__airportlocation {
+  font-family: "Roboto", sans-serif;
+  color: #000;
+  font-size: 1.3rem; }
+
+.flight .flight__airports {
+  margin: 10px 0; }
+
+.flight .flight__indetail {
+  padding-top: 0;
+  display: flex;
+  justify-content: space-between; }
 
 /*Footer*/
 .contact__address {

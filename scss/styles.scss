@@ -5,31 +5,41 @@
 
 
 //Constants
+.linebreak {
+    margin: 10px 0;
+    border:none;
+    border-top: 1px solid $gray;
+}
+.m0 { margin: 0 !important;}
 .mb-0 { margin-bottom: 0 !important; }
 .mt-0 { margin-top: 0 !important; }
 .ml-0 { margin-left: 0 !important; }
 .mr-0 { margin-right: 0 !important; }
+.p0 { padding: 0 !important;}
 .pb-0 { padding-bottom: 0 !important; }
 .pt-0 { padding-top: 0 !important; }
 .pl-0 { padding-left: 0 !important; }
 .pr-0 { padding-right: 0 !important; }
 .background--blue { background-color: $blue; }
 .background--gray { background-color: $gray; }
+.background--lighterGray { background-color: $lighterGray; }
 .color--red { color: $red; }
 .color--white { color: $white; }
 .color--black { color: $black; }
+.color--blue { color: $blue; }
 .color--lightgray { color: $lightGray; }
 .align--right { text-align: right; }
 .align--left { text-align: left; }
 .align--center { text-align: center; }
-.title--uppercase { text-transform: uppercase; }
+.text--uppercase { text-transform: uppercase; }
 .section--wrapper { padding: 15px 25px; }
 .width--50 {width: 50%; }
 .grid--layout { display: grid; }
 .grid--3col { grid-template-columns: 33.333% 33.333% 33.333%; }
 .grid--2col { grid-template-columns: 50% 50%; }
-.section--title { 
-    font-size: 1.5rem;
+.section--title,
+.enlarge--text { 
+    font-size: 1.3rem;
     line-height: 1.8rem;
     padding: 5px 25px;
     font-family: $heading; 
@@ -37,10 +47,20 @@
     letter-spacing: .05rem;
     margin: 0;
 }
+.enlarge--abit {
+    font-size: 1rem;
+}
+.enlarge--abitless {
+    font-size: .85rem;
+}
 .with-icon {
     padding-left:  80px;
 }
-
+.icon--size { 
+    position: relative;
+    top: 3px;
+    width: 15px;
+}
 .wrapper {
     font-family: $body;
 
@@ -51,6 +71,11 @@
 	font-size: 62.5%;
 	line-height:  62.5%;
     letter-spacing:  62.5%;
+}
+.round--corner { @include borderRadius(10px);}
+.highlighted--box {
+    padding:15px 25px; 
+    margin-bottom: 10px;
 }
 
 * {
@@ -97,10 +122,13 @@ header {
             letter-spacing: .05rem;
         }
         .pageheading__date {
-            font-size: .80rem;
+            font-size: .8rem;
         }
         .pageheading__details {
             font-size: .9rem;
+        }
+        .pageheading__note {
+            font-size: .75rem;
         }
     }
 }
@@ -160,15 +188,21 @@ header {
     }
 }
 
-.information{
-    .information__subtitle {
+.information,
+.insurance {
+    .information__subtitle,
+    .insurance__subtitle {
         font-size: 1rem;
     }   
 }
 
 .package__title,
 .howtobook__title,
-.information__title {
+.information__title,
+.flight__title,
+.hotel__title,
+.airport__title,
+.insurance__title {
     position: relative;
     &:before{
         content:"";
@@ -194,17 +228,44 @@ header {
         @include sectionTitleIcon(40px, 'icoinformation.png');
     }
 }
-.information__subtitle {
-    position: relative;
+.flight__title {
     &:before {
-        content:"";
-        position: absolute;
-        left: 40px;
-        top: 5px;
-        height: 25px;
-        width: 25px;
-        background: url(../images/icoessentia.png) center no-repeat;
-        background-size: 100%;
+        @include sectionTitleIcon(40px, 'icoflight.png');
+    }
+}
+.hotel__title {
+    &:before {
+        @include sectionTitleIcon(40px, 'icohotel.png');
+    }
+}
+.airport__title {
+    &:before {
+        @include sectionTitleIcon(40px, 'icoairport.png');
+    }
+}
+
+.insurance {
+    .insurance__title {
+        &:before {
+            @include sectionTitleIcon(40px, 'icoinsurance.png');
+        }
+    }
+    .information__subtitle,
+    .insurance__subtitle {
+        position: relative;
+        &:before {
+            content:"";
+            position: absolute;
+            left: 40px;
+            top: 5px;
+            height: 25px;
+            width: 25px;
+            background: url(../images/icoessentia.png) center no-repeat;
+            background-size: 100%;
+        }
+    }
+    .insurance__inclusion {
+        margin-bottom: 10px;
     }
 }
 
@@ -219,6 +280,62 @@ header {
         height:  37px;
         margin: 10px 25px;
         width: 150px;
+    }
+}
+
+.airport {
+    .airport__transfers {
+        background: url(../images/icoarrows.jpg) 43% top no-repeat;
+        margin-bottom: 10px;
+        background-size: 50px;
+        .airport__name {
+            font-size: .75rem;
+            line-height:1rem;
+        }
+    }
+}
+
+.hotel {
+    .hotel__details {
+        position: relative;
+        .hotel__dates {
+            width: 150px;
+            text-align: left;
+        }
+        .hotel__name {
+            font-family: $heading;
+            color: $black;
+            font-size: 1.3rem;
+        }
+        .hotel__rating {
+            width: 65px;
+        }
+        .hotel__booking {
+            position: absolute;
+            top: 15px;
+            right: 25px;
+        }
+        .hotel__indetail {
+            padding: 10px 0 0;
+            display: flex;
+            justify-content:space-between;
+        }
+    }
+}
+
+.flight {
+    .flight__airportlocation {
+        font-family: $heading;
+        color:$black;
+        font-size: 1.3rem;
+    }
+    .flight__airports {
+        margin: 10px 0;
+    }
+    .flight__indetail{
+        padding-top: 0;
+        display: flex;
+        justify-content: space-between;
     }
 }
 
