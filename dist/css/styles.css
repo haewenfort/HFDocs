@@ -129,6 +129,9 @@
   padding: 15px 25px;
   margin-bottom: 10px; }
 
+.no--icon:before {
+  display: none; }
+
 * {
   margin: 0; }
 
