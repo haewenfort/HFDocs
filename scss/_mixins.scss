@@ -6,10 +6,15 @@ $filepath: '../images/';
     -moz-border-radius: $radius;
 }
 
+@mixin boxSizing(){
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
 @mixin makeBorder($size, $style, $color){
     border: $size $style $color;
 }
-
 
 @mixin sectionTitleIcon($dimension, $filename){
     height: $dimension;

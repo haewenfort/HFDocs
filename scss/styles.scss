@@ -304,6 +304,9 @@ header {
         .hotel__dates {
             width: 150px;
             text-align: left;
+            &:after {
+                display: none !important;
+            }
         }
         .hotel__name {
             font-family: $heading;
@@ -323,6 +326,20 @@ header {
             display: flex;
             justify-content:space-between;
         }
+        .hotel__data {
+            position: relative;
+            font-size: .75rem;
+            &:after {
+                content: "";
+                position: absolute;
+                height: 40px;
+                width: 1px;
+                background: $gray;
+                left: -25px;
+                top: 0;
+            }
+        }
+        
     }
 }
 
@@ -332,13 +349,51 @@ header {
         color:$black;
         font-size: 1.3rem;
     }
-    .flight__airports {
-        margin: 10px 0;
-    }
     .flight__indetail{
         padding-top: 0;
         display: flex;
         justify-content: space-between;
+    }
+    .flight__departure {
+        font-size: 1rem;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+    .with--others {
+        width: 25%;
+        padding-left: 10px;
+        position: relative;
+        margin-left: 10px;
+        @include boxSizing();
+        .flight__airportdetail {
+            line-height: .85rem;
+            font-size: .65rem;
+        }
+        .flight__airportlocation {
+            font-size: 1rem;
+        }
+        &:before {
+            content: "";
+            position: absolute;
+            height: 60px;
+            width: 2px;
+            background: $gray;
+            left: 0;
+            top: 0;
+        }
+    }
+    .flight__data {
+        position: relative;
+        font-size: .75rem;
+        &:after {
+            content: "";
+            position: absolute;
+            height: 40px;
+            width: 1px;
+            background: $gray;
+            left: -9px;
+            top: 0;
+        }
     }
 }
 

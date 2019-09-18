@@ -328,6 +328,8 @@ header {
   .hotel .hotel__details .hotel__dates {
     width: 150px;
     text-align: left; }
+    .hotel .hotel__details .hotel__dates:after {
+      display: none !important; }
   .hotel .hotel__details .hotel__name {
     font-family: "Roboto", sans-serif;
     color: #000;
@@ -342,19 +344,66 @@ header {
     padding: 10px 0 0;
     display: flex;
     justify-content: space-between; }
+  .hotel .hotel__details .hotel__data {
+    position: relative;
+    font-size: .75rem; }
+    .hotel .hotel__details .hotel__data:after {
+      content: "";
+      position: absolute;
+      height: 40px;
+      width: 1px;
+      background: #c9cacb;
+      left: -25px;
+      top: 0; }
 
 .flight .flight__airportlocation {
   font-family: "Roboto", sans-serif;
   color: #000;
   font-size: 1.3rem; }
 
-.flight .flight__airports {
-  margin: 10px 0; }
-
 .flight .flight__indetail {
   padding-top: 0;
   display: flex;
   justify-content: space-between; }
+
+.flight .flight__departure {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  font-weight: bold; }
+
+.flight .with--others {
+  width: 25%;
+  padding-left: 10px;
+  position: relative;
+  margin-left: 10px;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box; }
+  .flight .with--others .flight__airportdetail {
+    line-height: .85rem;
+    font-size: .65rem; }
+  .flight .with--others .flight__airportlocation {
+    font-size: 1rem; }
+  .flight .with--others:before {
+    content: "";
+    position: absolute;
+    height: 60px;
+    width: 2px;
+    background: #c9cacb;
+    left: 0;
+    top: 0; }
+
+.flight .flight__data {
+  position: relative;
+  font-size: .75rem; }
+  .flight .flight__data:after {
+    content: "";
+    position: absolute;
+    height: 40px;
+    width: 1px;
+    background: #c9cacb;
+    left: -9px;
+    top: 0; }
 
 /*Footer*/
 .contact__address {
