@@ -6,6 +6,14 @@
   border: none;
   border-top: 1px solid #c9cacb; }
 
+.note {
+  font-size: .7rem;
+  color: #868686;
+  font-style: normal; }
+
+.no--background {
+  background: none !important; }
+
 .m0 {
   margin: 0 !important; }
 
@@ -101,7 +109,12 @@
   font-size: 1rem; }
 
 .enlarge--abitless {
-  font-size: .85rem; }
+  font-size: .85rem;
+  line-height: 1rem !important;
+  display: block; }
+
+.bolder--abit {
+  font-weight: bold; }
 
 .with-icon {
   padding-left: 80px; }
@@ -226,7 +239,7 @@ header {
 .information__title,
 .flight__title,
 .hotel__title,
-.airport__title,
+.transfer__title,
 .insurance__title {
   position: relative; }
   .package__title:before,
@@ -234,7 +247,7 @@ header {
   .information__title:before,
   .flight__title:before,
   .hotel__title:before,
-  .airport__title:before,
+  .transfer__title:before,
   .insurance__title:before {
     content: "";
     position: absolute;
@@ -275,7 +288,7 @@ header {
   background: url("../images/icohotel.png") center no-repeat #0051ad;
   background-size: 100%; }
 
-.airport__title:before {
+.transfer__title:before {
   height: 40px;
   width: 40px;
   background: url("../images/icoairport.png") center no-repeat #0051ad;
@@ -315,21 +328,39 @@ header {
     margin: 10px 25px;
     width: 150px; }
 
-.airport .airport__transfers {
+.transfer .transfer__heading {
+  margin-bottom: 10px; }
+
+.transfer .airport__transfers {
   background: url(../images/icoarrows.jpg) 43% top no-repeat;
-  margin-bottom: 10px;
   background-size: 50px; }
-  .airport .airport__transfers .airport__name {
+  .transfer .airport__transfers .airport__name {
     font-size: .75rem;
     line-height: 1rem; }
+  .transfer .airport__transfers .airport__arrival,
+  .transfer .airport__transfers .airport__return {
+    margin-bottom: 10px; }
+  .transfer .airport__transfers .airport__arrival:last-child,
+  .transfer .airport__transfers .airport__return:last-child {
+    margin-bottom: 0; }
+
+.transfer .bus__arrival,
+.transfer .bus__return {
+  margin-bottom: 10px; }
+  .transfer .bus__arrival:last-child,
+  .transfer .bus__return:last-child {
+    margin-bottom: 0; }
 
 .hotel .hotel__details {
   position: relative; }
   .hotel .hotel__details .hotel__dates {
     width: 150px;
+    padding-left: 0 !important;
     text-align: left; }
     .hotel .hotel__details .hotel__dates:after {
       display: none !important; }
+  .hotel .hotel__details .hotel__meal {
+    padding-right: 0 !important; }
   .hotel .hotel__details .hotel__name {
     font-family: "Roboto", sans-serif;
     color: #000;
@@ -341,19 +372,20 @@ header {
     top: 15px;
     right: 25px; }
   .hotel .hotel__details .hotel__indetail {
-    padding: 10px 0 0;
+    padding: 5px 0 0;
     display: flex;
     justify-content: space-between; }
   .hotel .hotel__details .hotel__data {
     position: relative;
-    font-size: .75rem; }
+    font-size: .75rem;
+    padding: 0 15px; }
     .hotel .hotel__details .hotel__data:after {
       content: "";
       position: absolute;
       height: 40px;
       width: 1px;
       background: #c9cacb;
-      left: -25px;
+      left: -5px;
       top: 0; }
 
 .flight .flight__airportlocation {
@@ -367,31 +399,32 @@ header {
   justify-content: space-between; }
 
 .flight .flight__departure {
-  font-size: 1rem;
-  margin-bottom: 10px;
+  font-size: .85rem;
+  margin-bottom: 5px;
   font-weight: bold; }
 
 .flight .with--others {
   width: 25%;
-  padding-left: 10px;
   position: relative;
-  margin-left: 10px;
+  margin-left: 0;
+  padding-left: 0;
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box; }
+  -moz-box-sizing: border-box;
+  /*&:before {
+            content: "";
+            position: absolute;
+            height: 60px;
+            width: 2px;
+            background: $gray;
+            left: 0;
+            top: 0;
+        }*/ }
   .flight .with--others .flight__airportdetail {
     line-height: .85rem;
     font-size: .65rem; }
   .flight .with--others .flight__airportlocation {
     font-size: 1rem; }
-  .flight .with--others:before {
-    content: "";
-    position: absolute;
-    height: 60px;
-    width: 2px;
-    background: #c9cacb;
-    left: 0;
-    top: 0; }
 
 .flight .flight__data {
   position: relative;

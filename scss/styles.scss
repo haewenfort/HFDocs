@@ -10,6 +10,14 @@
     border:none;
     border-top: 1px solid $gray;
 }
+.note {
+    font-size: .7rem;
+    color: $lightGray;
+    font-style: normal;
+}
+.no--background {
+    background: none !important;
+}
 .m0 { margin: 0 !important;}
 .mb-0 { margin-bottom: 0 !important; }
 .mt-0 { margin-top: 0 !important; }
@@ -52,6 +60,11 @@
 }
 .enlarge--abitless {
     font-size: .85rem;
+    line-height: 1rem !important;
+    display: block;
+}
+.bolder--abit {
+    font-weight: bold;
 }
 .with-icon {
     padding-left:  80px;
@@ -204,7 +217,7 @@ header {
 .information__title,
 .flight__title,
 .hotel__title,
-.airport__title,
+.transfer__title,
 .insurance__title {
     position: relative;
     &:before{
@@ -241,7 +254,7 @@ header {
         @include sectionTitleIcon(40px, 'icohotel.png');
     }
 }
-.airport__title {
+.transfer__title {
     &:before {
         @include sectionTitleIcon(40px, 'icoairport.png');
     }
@@ -286,16 +299,34 @@ header {
     }
 }
 
-.airport {
+.transfer {
+    .transfer__heading {
+        margin-bottom: 10px;
+    }
     .airport__transfers {
         background: url(../images/icoarrows.jpg) 43% top no-repeat;
-        margin-bottom: 10px;
         background-size: 50px;
         .airport__name {
             font-size: .75rem;
             line-height:1rem;
         }
+        .airport__arrival,
+        .airport__return {
+            margin-bottom: 10px;
+        }
+        .airport__arrival:last-child,
+        .airport__return:last-child {
+            margin-bottom: 0;
+        }
     }
+    .bus__arrival,
+    .bus__return {
+        margin-bottom: 10px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    
 }
 
 .hotel {
@@ -303,10 +334,14 @@ header {
         position: relative;
         .hotel__dates {
             width: 150px;
+            padding-left: 0 !important;
             text-align: left;
             &:after {
                 display: none !important;
             }
+        }
+        .hotel__meal {
+            padding-right: 0 !important;
         }
         .hotel__name {
             font-family: $heading;
@@ -322,20 +357,21 @@ header {
             right: 25px;
         }
         .hotel__indetail {
-            padding: 10px 0 0;
+            padding: 5px 0 0;
             display: flex;
             justify-content:space-between;
         }
         .hotel__data {
             position: relative;
             font-size: .75rem;
+            padding: 0 15px;
             &:after {
                 content: "";
                 position: absolute;
                 height: 40px;
                 width: 1px;
                 background: $gray;
-                left: -25px;
+                left: -5px;
                 top: 0;
             }
         }
@@ -355,15 +391,15 @@ header {
         justify-content: space-between;
     }
     .flight__departure {
-        font-size: 1rem;
-        margin-bottom: 10px;
+        font-size: .85rem;
+        margin-bottom: 5px;
         font-weight: bold;
     }
     .with--others {
         width: 25%;
-        padding-left: 10px;
         position: relative;
-        margin-left: 10px;
+        margin-left: 0;
+        padding-left: 0;
         @include boxSizing();
         .flight__airportdetail {
             line-height: .85rem;
@@ -372,7 +408,7 @@ header {
         .flight__airportlocation {
             font-size: 1rem;
         }
-        &:before {
+        /*&:before {
             content: "";
             position: absolute;
             height: 60px;
@@ -380,7 +416,7 @@ header {
             background: $gray;
             left: 0;
             top: 0;
-        }
+        }*/
     }
     .flight__data {
         position: relative;
